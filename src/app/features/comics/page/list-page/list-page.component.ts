@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComicService } from '../../services/comic.service';
 
 @Component({
   selector: 'app-list-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private comicsService: ComicService ) { }
 
   ngOnInit() {
+    this.comicsService.getAll().subscribe((result: any) => {
+      console.log('Success!', result);
+    }, (error) => {
+      console.error('Failed!', error);
+    });
   }
 
 }

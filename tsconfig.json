@@ -24,6 +24,9 @@
       ],
       "@features/*": [
         "./src/app/features/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
       ]
     }
   },
