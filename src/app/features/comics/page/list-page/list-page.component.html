@@ -3,10 +3,12 @@
 
 <app-list>
   <app-list-card *ngFor="let comic of comics.results">
-    <img [src]="comic.imageURL" width="100%" height="400px"/>
-    {{ comic.title }}
-    <hr/>
-    {{ comic.description }}
+    <div class="comic-card">
+      <div>
+        <img [src]="comic.imageURL" class="comic-card--image" alt="{{ comic.title }}"/>
+      </div>
+      <div class="comic-card--title">{{ comic.title }}</div>     
+    </div>
   </app-list-card>
 
 </app-list>
