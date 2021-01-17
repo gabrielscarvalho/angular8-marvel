@@ -1,2 +1,12 @@
 <p>list-page works!</p>
-<app-list>ESTOU AQUI</app-list>
+
+
+<app-list>
+  <app-list-card *ngFor="let comic of comics.results">
+    <img [src]="comic.imageURL" width="100%" height="400px"/>
+    {{ comic.title }}
+    <hr/>
+    {{ comic.description }}
+  </app-list-card>
+
+</app-list>

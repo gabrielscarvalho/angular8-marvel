@@ -13,9 +13,7 @@
   padding: spacing(2)
   @media screen and (min-width: map-get($devicesWidth,'mobile'))
     grid-template-columns: repeat(map-get($gridColumns, 'mobile'), 1fr)
+  @media screen and (min-width: map-get($devicesWidth,'tablet'))
+    grid-template-columns: repeat(map-get($gridColumns, 'tablet'), 1fr)    
   @media screen and (min-width: map-get($devicesWidth, 'desktop'))
     grid-template-columns: repeat(map-get($gridColumns, 'desktop'), 1fr)
-  &-card
-    border: 1px solid $secondary-color
-    box-sizing: border-box
-    padding: spacing(2)
