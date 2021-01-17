@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ComicsModule } from '../features/comics/comics.module';
 import { NavigationModule } from '@app/shared/components/navigation/navigation.module';
 import { ToolbarModule } from '@app/shared/components/toolbar/toolbar.module';
+import { LoadingModule } from '@app/shared/components/loading/loading.module';
+import { LoadingService } from '@app/shared/components/loading/services/loading.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { ToolbarModule } from '@app/shared/components/toolbar/toolbar.module';
     AppRoutingModule,
     NavigationModule,
     ComicsModule,
-    ToolbarModule
+    ToolbarModule,
+    LoadingModule
   ],
-  providers: [],
+  providers: [LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
