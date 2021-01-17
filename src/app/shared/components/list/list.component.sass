@@ -1,0 +1,23 @@
+@import './../../style/variables' 
+@import './../../style/functions' 
+
+.list
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: flex-start 
+  width: 100%
+  box-sizing: border-box
+  background: $white
+  border: 2px solid $primary-color
+  padding: spacing(2)
+  &-card
+    flex-basis: calc(25% - #{spacing(2)})
+    border: 1px solid $secondary-color
+    box-sizing: border-box
+    padding: spacing(2)
+    margin: spacing(1)  
+    @media screen and (min-width: map-get($devicesWidth,'mobile'))
+      flex-basis: calc(100% - #{spacing(2)})
+    @media screen and (min-width: map-get($devicesWidth, 'desktop'))
+      flex-basis: calc(25% - #{spacing(2)})
