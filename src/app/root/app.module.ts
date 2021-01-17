@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComicsModule } from '../features/comics/comics.module';
 import { NavigationModule } from '@app/shared/components/navigation/navigation.module';
+import { ToolbarModule } from '@app/shared/components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavigationModule } from '@app/shared/components/navigation/navigation.m
     BrowserModule,
     AppRoutingModule,
     NavigationModule,
-    ComicsModule
+    ComicsModule,
+    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
