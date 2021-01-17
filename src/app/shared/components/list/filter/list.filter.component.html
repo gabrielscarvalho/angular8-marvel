@@ -1,3 +1,31 @@
-<div>
-  Filter here
+<div class="list-filter-toolbar">
+  <div></div>
+  <div style="text-align: center">
+    <div *ngIf="isCompleteFilter">
+      <div class="list-filter-toolbar-paging">
+        <button><<</button> |
+        <input
+          class="list-filter-toolbar-paging--input"
+          type="text"
+          value="3"
+        />
+        of 10543 | <button>>></button>
+      </div>
+      <div class="list-filter-toolbar-search-size">
+        Showing:
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+        </select>
+        results of 40230.
+      </div>
+    </div>
+    <div *ngIf="!isCompleteFilter">
+      <button><<</button> |3 of 10543| <button>>></button>
+    </div>
+  </div>
+  <div>
+    <button>Search!</button>
+  </div>
 </div>

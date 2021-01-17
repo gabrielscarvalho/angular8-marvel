@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.filter.component.sass']
 })
 export class ListFilterComponent implements OnInit {
-
+  public isCompleteFilter: boolean = true
   constructor() { }
 
   ngOnInit() {
