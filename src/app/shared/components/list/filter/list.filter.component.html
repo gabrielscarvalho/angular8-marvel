@@ -1,31 +1,23 @@
 <div class="list-filter-toolbar">
-  <div></div>
   <div style="text-align: center">
-    <div *ngIf="isCompleteFilter">
+    <div>
       <div class="list-filter-toolbar-paging">
-        <button><<</button> |
-        <input
-          class="list-filter-toolbar-paging--input"
-          type="text"
-          value="3"
-        />
-        of 10543 | <button>>></button>
+        <button class="btn" (click)="changePage(offset - 1 )"><<</button> |
+        {{ getCurrentPage() }}
+        of {{ getPages() }} | <button class="btn" (click)="changePage( offset + 1 )">>></button>
       </div>
       <div class="list-filter-toolbar-search-size">
         Showing:
-        <select>
+        <select
+          [formControl]="limitSelector"
+          >
           <option>10</option>
           <option>20</option>
-          <option>30</option>
+          <option>50</option>
+          <option>100</option>
         </select>
-        results of 40230.
+        results of {{ total }}.
       </div>
     </div>
-    <div *ngIf="!isCompleteFilter">
-      <button><<</button> |3 of 10543| <button>>></button>
-    </div>
-  </div>
-  <div>
-    <button>Search!</button>
   </div>
 </div>

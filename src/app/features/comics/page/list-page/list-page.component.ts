@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListFilterPagination } from '@app/shared/components/list/filter/model/list.filter.pagination.model';
 import { LoadingService } from '@app/shared/components/loading/services/loading.service';
 import { ComicListModel } from '../../model/comic.model';
 import { ComicService } from '../../services/comic.service';
@@ -9,27 +10,47 @@ import { ComicService } from '../../services/comic.service';
   styleUrls: ['./list-page.component.sass']
 })
 export class ListPageComponent implements OnInit {
-
+  
   public comics: ComicListModel = {
     limit: 10,
     offset: 0,
+    total: 0,
     results: []
   };
 
-  constructor(private comicsService: ComicService,
+  constructor(
+    private comicsService: ComicService,
     private loadingService: LoadingService
-    ) { }
+  ) { }
 
-  ngOnInit() {
-    this.loadingService.show();
-    this.comicsService.getAll(3, 50).subscribe((result: ComicListModel) => {
-      this.loadingService.hide();
-      this.comics = result; 
-      console.log('Success!', result);
-    }, (error) => {
-      this.loadingService.hide();
-      console.error('Failed!', error);
-    });
+
+  public refreshSearch(data: ListFilterPagination): void{
+    this.getComics(data.offset, data.limit);
+  } 
+
+  public ngOnInit(): void {
+    this.getComics(this.comics.offset, this.comics.limit);
   }
 
+  private async getComics(offset: number, limit: number) {
+    this.loadingService.show();
+    try {
+      this.comics = await this.comicsService.getAll(offset, limit).toPromise();
+      console.log('Success!', this.comics);
+    }  catch (error) {
+      console.error('Failed!', error);
+      this.resetComics();
+    } finally {
+      this.loadingService.hide();
+    } 
+  }
+
+  private resetComics() {
+    this.comics = {
+      limit: 10,
+      offset: 0,
+      total: 0,
+      results: []
+    };
+  }
 }

@@ -1,4 +1,9 @@
-<app-list>
+<app-list
+  (changePagination)="refreshSearch($event)"
+  [limit]="comics.limit" 
+  [total]="comics.total" 
+  [offset]="comics.offset"
+>
   <app-list-card *ngFor="let comic of comics.results">
     <div class="comic-card">
       <div>

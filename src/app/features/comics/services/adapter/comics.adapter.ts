@@ -9,6 +9,7 @@ export class ComicsAdapter {
     const comicList: ComicListModel = {
       limit: response.limit,
       offset: response.offset,
+      total: response.total,
       results: []
     };
 

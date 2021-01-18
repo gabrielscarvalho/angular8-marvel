@@ -9,5 +9,6 @@ export interface ComicModel {
 export interface ComicListModel {
   offset: number;
   limit: number;
+  total: number;
   results: ComicModel[]
 }
