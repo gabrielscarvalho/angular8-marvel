@@ -1,8 +1,14 @@
 @import './../shared/style/variables'
 @import './../shared/style/functions'
 
-.content
-  position: relative
-  top: $toolbarHeight
-  box-sizing: border-box
-  padding: spacing(2)
+
+.app-page
+  display: flex
+  flex-flow: column
+  justify-content: flex-start
+  height: 100%
+  width: 100%
+  &--content
+    width: 100%
+    flex-grow: 1
+    background: lightcoral
