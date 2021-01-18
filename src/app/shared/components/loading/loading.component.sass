@@ -1,8 +1,30 @@
 @import './../../style/functions'
+@import './../../style/variables'
 
-:host
-  position: fixed
-  bottom: 0
+.loader-blur
+  position: absolute
+  z-index: 97
+  top: 55px
   left: 0
-  background: yellow
+  width: 100%
+  height: calc(100% - 55px)
+  background: $white
+  opacity: 0.5
+
+.loader
+  position: fixed
+  z-index: 98
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 80px
+  height: 80px
   padding: spacing(1)
+  background: transparent
+  opacity: 1
+  &-message
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    height: 100%
