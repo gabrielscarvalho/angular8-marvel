@@ -1,4 +1,12 @@
-<div class="list">
-  <ng-content></ng-content>
+<div style="
+  display: flex; 
+  flex-flow: column; 
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+">
+  <div class="list" style="flex-grow: 1;">
+    <ng-content></ng-content>
+  </div>
+  <app-list-filter style="height: 80px;"></app-list-filter>
 </div>
-<app-list-filter></app-list-filter>
