@@ -1,9 +1,9 @@
-<div *ngIf="(loadingService.loader | async)">
-  <div class="loader-blur">
-  </div>
-  <div class="loader"> 
-    <div class="loader-message" >
-      <div><img src="/assets/images/ajax-loader3.gif"/> </div>
+<div *ngIf="loadingService.loader | async">
+  <app-blackout [show]="true">
+    <div class="loader">
+      <div class="loader-message">
+        <div><img src="/assets/images/ajax-loader3.gif" alt="loading..." /></div>
+      </div>
     </div>
-  </div>
+  </app-blackout>
 </div>
