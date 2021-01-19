@@ -1,27 +1,14 @@
 @import './../../style/functions'
 @import './../../style/variables'
-
-.loader-blur
-  position: absolute
-  z-index: 97
-  top: 55px
-  left: 0
-  width: 100%
-  height: calc(100% - 55px)
-  background: $white
-  opacity: 0.5
-
+@import './../../style/mixins'
 .loader
-  position: fixed
-  z-index: 98
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
+  @include blackout-content-center
   width: 80px
   height: 80px
   padding: spacing(1)
   background: transparent
   opacity: 1
+
   &-message
     display: flex
     flex-flow: column
