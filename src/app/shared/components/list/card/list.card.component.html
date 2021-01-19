@@ -1,3 +1,8 @@
 <div class="list-card">
-  <ng-content></ng-content>
+  <div class="list-card--content">
+    <div>
+      <img [src]="image" class="list-card--image" [alt]="title"/>
+    </div>
+    <div class="list-card--title">{{ title }}</div>     
+  </div>
 </div>

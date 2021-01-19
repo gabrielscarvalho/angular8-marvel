@@ -4,13 +4,10 @@
   [total]="comics.total" 
   [offset]="comics.offset"
 >
-  <app-list-card *ngFor="let comic of comics.results">
-    <div class="comic-card">
-      <div>
-        <img [src]="comic.imageURL" class="comic-card--image" alt="{{ comic.title }}"/>
-      </div>
-      <div class="comic-card--title">{{ comic.title }}</div>     
-    </div>
+  <app-list-card *ngFor="let comic of comics.results"
+    [image]="comic.imageURL"
+    [title]="comic.title"
+  >
   </app-list-card>
 
 </app-list>
