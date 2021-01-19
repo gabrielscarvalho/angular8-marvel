@@ -7,10 +7,11 @@ import { MarvelModule } from '@app/shared/marvel/marvel.module';
 import { ComicService } from './services/comic.service';
 import { ListModule } from '@app/shared/components/list/list.module';
 import { ModalModule } from '@app/shared/components/modal/modal.module';
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
-  declarations: [ListPageComponent],
+  declarations: [ListPageComponent, ViewComponent],
   imports: [
     CommonModule,
     ComicsRoutingModule,

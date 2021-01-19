@@ -2,32 +2,42 @@
 @import './../../style/variables'
 @import './../../style/functions'
 
+@keyframes modal-grow-mobile
+    0%
+      opacity: 0
+      width: 40%
+      height: 40%
+    100%
+      opacity: 1
+      width: 100%
+      height: 100%
 
-@media screen and (min-width: map-get($devicesWidth,'mobile'))
-  @keyframes modal-grow
-      0%
-        width: 150px
-        height: 120px
-      100%
-        width: 100%
-        height: 100%
-        
-@media screen and (min-width: map-get($devicesWidth, 'desktop'))
-  @keyframes modal-grow
-      0%
-        width: 150px
-        height: 120px
-      100%
-        width: 80%
-        height: 80%
-      
+@keyframes modal-grow
+    0%
+      opacity: 0
+      width: 40%
+      height: 40%
+    100%
+      opacity: 1
+      width: 80%
+      height: 80%
+
 .modal
   @include blackout-content-center
-  animation: 1s linear modal-grow forwards
   background: $white
-  border: 2px solid $primary-color
+  border: 1px solid $secondary-color
+  box-shadow: 3px 3px 15px $gray-light
   display: flex
   flex-flow: column
+  opacity: 1
+  @media screen and (min-width: map-get($devicesWidth,'mobile'))
+    width: 100%
+    height: 100%
+    animation: .5s linear modal-grow-mobile
+  @media screen and (min-width: map-get($devicesWidth, 'desktop'))
+    width: 80%
+    height: 80%
+    animation: .5s linear modal-grow
   &-title
     width: 100%
     height: 40px
