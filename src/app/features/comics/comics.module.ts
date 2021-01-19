@@ -6,6 +6,7 @@ import { ListPageComponent } from './page/list-page/list-page.component';
 import { MarvelModule } from '@app/shared/marvel/marvel.module';
 import { ComicService } from './services/comic.service';
 import { ListModule } from '@app/shared/components/list/list.module';
+import { ModalModule } from '@app/shared/components/modal/modal.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ListModule } from '@app/shared/components/list/list.module';
     CommonModule,
     ComicsRoutingModule,
     MarvelModule,
-    ListModule
+    ListModule,
+    ModalModule
   ],
   providers: [ ComicService ]
 })

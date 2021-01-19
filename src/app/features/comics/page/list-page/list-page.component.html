@@ -1,3 +1,14 @@
+<app-modal 
+  [open]="isDetailOpen" 
+  [title]="selectedComic.title"
+  (close)="closeDetails()"
+  >
+  <div>    
+      <img [src]="selectedComic.imageURL" />
+      {{ selectedComic.description}}
+  </div>
+</app-modal>
+
 <app-list
   (changePagination)="refreshSearch($event)"
   [limit]="comics.limit" 
@@ -7,6 +18,8 @@
   <app-list-card *ngFor="let comic of comics.results"
     [image]="comic.imageURL"
     [title]="comic.title"
+    [id]="comic.id"
+    (selectCard)="selectComic($event)"
   >
   </app-list-card>
 

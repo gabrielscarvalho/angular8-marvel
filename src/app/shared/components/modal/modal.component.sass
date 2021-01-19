@@ -1,0 +1,53 @@
+@import './../../style/mixins'
+@import './../../style/variables'
+@import './../../style/functions'
+
+
+@media screen and (min-width: map-get($devicesWidth,'mobile'))
+  @keyframes modal-grow
+      0%
+        width: 150px
+        height: 120px
+      100%
+        width: 100%
+        height: 100%
+        
+@media screen and (min-width: map-get($devicesWidth, 'desktop'))
+  @keyframes modal-grow
+      0%
+        width: 150px
+        height: 120px
+      100%
+        width: 80%
+        height: 80%
+      
+.modal
+  @include blackout-content-center
+  animation: 1s linear modal-grow forwards
+  background: $white
+  border: 2px solid $primary-color
+  display: flex
+  flex-flow: column
+  &-title
+    width: 100%
+    height: 40px
+    display: flex
+    flex-flow: row
+    justify-content: space-between
+    border-bottom: 2px solid $secondary-color
+    align-items: center
+    &--text
+      margin-left: spacing(2)
+  &-close
+    margin-right: spacing(2)    
+  &-content
+    flex-grow: 1
+  &-buttons
+    width: 100%
+    height: 40px
+    border-top: 2px solid $secondary-color
+    & > span
+      display: inline-block
+      margin: spacing(1)
+
+  
